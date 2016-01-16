@@ -88,3 +88,16 @@ div.toolbar {
 .toolbar a:link {
     color: white;
 }
+
+div.center-image {
+    position: absolute;
+    top: 10%;
+    bottom: 5%;
+    left: 10%;
+    right: 10%;
+}
+
+div.center-image img {
+    width: 100%;
+    height: 100%;
+}
