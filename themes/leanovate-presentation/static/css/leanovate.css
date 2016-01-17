@@ -23,6 +23,7 @@ body {
     color: black;
     background-color: white;
     font-family: "Gill Sans MT", "Gill Sans", GillSans, sans-serif;
+    font-size: 24px;
 }
 
 div.slide h1 {
@@ -87,6 +88,10 @@ div.toolbar {
 
 .toolbar a:link {
     color: white;
+}
+
+div.toolbar span.copyright {
+    color: lightgray;
 }
 
 div.center-image {
