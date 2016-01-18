@@ -1,10 +1,10 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" media="screen, projection, print" href="/css/slidy.css" />
-<link rel="stylesheet" type="text/css" media="screen, projection, print" href="/css/leanovate.css" />
-<script src="/js/slidy.js" charset="utf-8" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="{{ "/css/slidy.css" | relURL}}" />
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="{{ "/css/leanovate.css" | relURL}}" />
+<script src="{{ "/js/slidy.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
 <meta name="duration" content="{{ .Params.duration }}" />
-<meta name="copyright" content="{{ .Params.copyright }}" /> 
+<meta name="copyright" content="{{ .Params.copyright }}" />
 </head>
 <body>
 <div class="background">
