@@ -12,3 +12,4 @@ presentations = ["microexchange2016"]
   * If possible use a BDD test-framework
 * Log all HTTP requests/responses
 * Generate a report from theses logs and automatically publish it where other developers can easily find them
+* Optional: Record all html requests with a mock-tool (e.g. [Wiremock](http://wiremock.org/))
