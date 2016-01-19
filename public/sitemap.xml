@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/microexchange2016.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/03-most-common-errors.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/04-how-to-avoid-most.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/05-document-by-examples.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/06-cucumber-code.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/08-provide-api-specification.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/09-swagger-example.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/10-test-serializers.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-specification.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+</urlset>

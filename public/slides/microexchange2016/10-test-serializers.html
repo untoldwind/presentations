@@ -1,0 +1,28 @@
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> Specification with ScalaCheck with MustMatchers <span style="color: #333333">{</span>
+  val swaggerCheck <span style="color: #333333">=</span> SwaggerChecks<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;../bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;be receivable&quot;</span> in <span style="color: #333333">{</span>
+      implicit val arbitraryJson <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>CheckJsValue<span style="color: #333333">](</span>
+                                     swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonGenerator</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">))</span>
+      prop <span style="color: #333333">{</span> json<span style="color: #333333">:</span> CheckJsValue <span style="color: #333333">=&gt;</span>
+        Json<span style="color: #333333">.</span><span style="color: #0000CC">parse</span><span style="color: #333333">(</span>json<span style="color: #333333">.</span><span style="color: #0000CC">minified</span><span style="color: #333333">).</span><span style="color: #0000CC">validate</span><span style="color: #333333">[</span>Author<span style="color: #333333">].</span><span style="color: #0000CC">isSuccess</span> must beTrue
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+    <span style="background-color: #fff0f0">&quot;be sendable&quot;</span> in <span style="color: #333333">{</span>
+      implicit val arbitraryAuthor <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>Author<span style="color: #333333">](</span><span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">{</span>
+        id <span style="color: #333333">&lt;-</span> Gen<span style="color: #333333">.</span><span style="color: #0000CC">uuid</span>
+        name <span style="color: #333333">&lt;-</span> Arbitrary<span style="color: #333333">.</span><span style="color: #0000CC">arbitrary</span><span style="color: #333333">[</span>String<span style="color: #333333">]</span>
+      <span style="color: #333333">}</span> yield <span style="color: #0066BB; font-weight: bold">Author</span><span style="color: #333333">(</span>id<span style="color: #333333">,</span> name<span style="color: #333333">))</span>
+      val check <span style="color: #333333">=</span> swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonVerifier</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">)</span>
+
+      prop <span style="color: #333333">{</span> author<span style="color: #333333">:</span> Author <span style="color: #333333">=&gt;</span>
+        check<span style="color: #333333">.</span><span style="color: #0000CC">verify</span><span style="color: #333333">(</span>Json<span style="color: #333333">.</span><span style="color: #0000CC">stringify</span><span style="color: #333333">(</span>Json<span style="color: #333333">.</span><span style="color: #0000CC">toJson</span><span style="color: #333333">(</span>author<span style="color: #333333">))).</span><span style="color: #0000CC">isSuccess</span> must beTrue
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
