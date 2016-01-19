@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on My New Hugo Site</title>
+    <link>http://replace-this-with-your-hugo-site.com/slides.html</link>
+    <description>Recent content in Slides on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jan 2016 18:01:10 +0100</lastBuildDate>
+    <atom:link href="http://replace-this-with-your-hugo-site.com/slides.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Common scenario</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</guid>
+      <description>&lt;div class=&#34;center-box&#34;&gt;
+  &lt;img src=&#34;../microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Desired build pipeline</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</guid>
+      <description>&lt;div class=&#34;center-box&#34;&gt;
+  &lt;img src=&#34;../microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Most common errors</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/03-most-common-errors.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/03-most-common-errors.html</guid>
+      <description>&lt;ul class=&#34;incremental&#34;&gt;
+&lt;li&gt;Data is not where it is expected to be, e.g. ...
+
+&lt;ul&gt;
+&lt;li&gt;... value is missing (even though it is supposed to be required)&lt;/li&gt;
+&lt;li&gt;... typo in uri or json field-name&lt;/li&gt;
+&lt;li&gt;... misunderstanding about json hierarchy&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Data is not in expected format, e.g. ...
+
+&lt;ul&gt;
+&lt;li&gt;... string &amp;quot;true&amp;quot; instead of boolean true&lt;/li&gt;
+&lt;li&gt;... integer with unix-timestamp instead of string with iso-datetime&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Consumer sends data while provider is in wrong state, e.g. ...
+
+&lt;ul&gt;
+&lt;li&gt;... reference entities that should have been create before&lt;/li&gt;
+&lt;li&gt;... value is out of bounds&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to avoid most of them</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/04-how-to-avoid-most.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/04-how-to-avoid-most.html</guid>
+      <description>&lt;ul class=&#34;incremental&#34;&gt;
+&lt;li&gt;Provide precise documentation your API&lt;/li&gt;
+&lt;li&gt;Developers love to read documentation&lt;/li&gt;
+&lt;li&gt;... but hate to write it&lt;/li&gt;
+&lt;li&gt;... and forget to update it&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Document by example</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/05-document-by-examples.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/05-document-by-examples.html</guid>
+      <description>&lt;ul class=&#34;incremental&#34;&gt;
+&lt;li&gt;Write your own consumer test (or smoke test) for your service
+
+&lt;ul&gt;
+&lt;li&gt;Test your service as near to production as possible (staging environment)&lt;/li&gt;
+&lt;li&gt;Integrate it in your deployment chain&lt;/li&gt;
+&lt;li&gt;If possible use a BDD test-framework&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Log all HTTP requests/responses&lt;/li&gt;
+&lt;li&gt;Generate a report from theses logs and automatically publish it where other developers can easily find them&lt;/li&gt;
+&lt;li&gt;Optional: Record all html requests with a mock-tool (e.g. &lt;a href=&#34;http://wiremock.org/&#34;&gt;Wiremock&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example: Cucumber JVM</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/06-cucumber-code.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/06-cucumber-code.html</guid>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;Feature:&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt; Manage authors&lt;/span&gt;
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;  &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;Scenario:&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt; Add and remove author&lt;/span&gt;
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;    Given: A running book database&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;    When &lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;An author with name &amp;quot;&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Test Writer&lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;&amp;quot; is added&lt;/span&gt;
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;Then &lt;/span&gt;&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;The created author does exists&lt;/span&gt;
+&lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorStepdefs&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color: #555555; font-weight: bold&#34;&gt;@When&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;^An author with name \&amp;quot;([^\&amp;quot;]*)\&amp;quot; is added$&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;anAuthorWithNameIsAdded&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;String authorName&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;throws&lt;/span&gt; Throwable &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        Author author &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; Author&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;authorName&lt;span style=&#34;color: #333333&#34;&gt;);&lt;/span&gt;
+        Request request &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Request&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;Post&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;config&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;baseUrl&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;resolve&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/v1/authors&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+                                 &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;body&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;JsonHelper&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;valueToEntity&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;));&lt;/span&gt;
+        HttpResponse response &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; client&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;execute&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;request&lt;span style=&#34;color: #333333&#34;&gt;);&lt;/span&gt;
+
+        assertThat&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;response&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;isCreated&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;hasHeader&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HttpHeaders&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;LOCATION&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;);&lt;/span&gt;
+        authorUri &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Optional&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;response&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;getFirstHeader&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;HttpHeaders&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;LOCATION&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+                                        &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;getValue&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;());&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #555555; font-weight: bold&#34;&gt;@Then&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;^The created author does exists$&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;theCreatedAuthorDoesExists&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;throws&lt;/span&gt; Throwable &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        Request request &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Request&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;authorUri&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;orElseThrow&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;
+            &lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; RuntimeException&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author uri not set&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)));&lt;/span&gt;
+
+        author &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Optional&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;of&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;client&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;executeJson&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;request&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; Author&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;));&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example: Cucumber HTML report</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</guid>
+      <description>&lt;div class=&#34;center-box&#34;&gt;
+    &lt;iframe class=&#34;center-inline&#34; src=&#34;../microexchange2016/cucumber-report/index.html&#34;&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Provide API specification</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/08-provide-api-specification.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/08-provide-api-specification.html</guid>
+      <description>&lt;ul class=&#34;incremental&#34;&gt;
+&lt;li&gt;Document your API with a REST specification (e.g. &lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt; or &lt;a href=&#34;http://raml.org/&#34;&gt;RAML&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;How to keep the specification in-sync with reality?&lt;/li&gt;
+&lt;li&gt;Usual approach: Add lots of annotations to your source-code and generate documentation automatically
+
+&lt;ul&gt;
+&lt;li&gt;Accuracy of the specification highly depends on the framework (jax-rs, Play, Ratpack, liberator, ...)&lt;/li&gt;
+&lt;li&gt;No guarantee that a new API version is backward compatible&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Advanced approach:
+
+&lt;ul&gt;
+&lt;li&gt;Write specification (before actually writing the code)&lt;/li&gt;
+&lt;li&gt;Integrate specification in unit-tests using property-based testing (e.g. &lt;a href=&#34;https://www.scalacheck.org/&#34;&gt;ScalaCheck&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Example: Swagger 2.0 specification</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/09-swagger-example.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/09-swagger-example.html</guid>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;swagger: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt;
+info:
+  title: Book database API
+  description: Manage all your books
+  version: 1.0.0
+basePath: /v1
+paths:
+  /authors:
+    post:
+      summary: Create a new author
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;#/definitions/Author&amp;quot;&lt;/span&gt;
+      responses:
+        &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;201&amp;#39;&lt;/span&gt;:
+          description: Author successfully created
+          headers:
+            Location:
+              type: string
+              format: uri
+        default:
+          description: Unexpected error
+          schema:
+            $ref: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;#/definitions/Error&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color: #0e84b5; font-weight: bold&#34;&gt;...&lt;/span&gt;
+definitions:
+  Author:
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        type: string
+        format: uuid
+        readOnly: true
+      name:
+        type: string
+  Error:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          type: string
+&lt;span style=&#34;color: #0e84b5; font-weight: bold&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Example: Check (de-)serializers</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/10-test-serializers.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/10-test-serializers.html</guid>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; Specification with ScalaCheck with MustMatchers &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  val swaggerCheck &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; SwaggerChecks&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; File&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;../bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be receivable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+      implicit val arbitraryJson &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;CheckJsValue&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;
+                                     swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonGenerator&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt; json&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; CheckJsValue &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+        Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;minified&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;validate&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;].&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;isSuccess&lt;/span&gt; must beTrue
+      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be sendable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+      implicit val arbitraryAuthor &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        id &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Gen&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;uuid&lt;/span&gt;
+        name &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;String&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt; yield &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;id&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; name&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      val check &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonVerifier&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt; author&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; Author &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+        check&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;verify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;stringify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toJson&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;))).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;isSuccess&lt;/span&gt; must beTrue
+      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Test specification vs. reality</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-specification.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-specification.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example: Test router</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

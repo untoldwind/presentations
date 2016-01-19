@@ -1,0 +1,34 @@
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">Feature:</span><span style="color: #0066BB; font-weight: bold"> Manage authors</span>
+<span style="color: #0066BB; font-weight: bold">  </span><span style="color: #008800; font-weight: bold">Scenario:</span><span style="color: #0066BB; font-weight: bold"> Add and remove author</span>
+<span style="color: #0066BB; font-weight: bold">    Given: A running book database</span>
+<span style="color: #008800; font-weight: bold">    When </span><span style="color: #0066BB; font-weight: bold">An author with name &quot;</span><span style="background-color: #fff0f0">Test Writer</span><span style="color: #0066BB; font-weight: bold">&quot; is added</span>
+<span style="color: #0066BB; font-weight: bold">    </span><span style="color: #008800; font-weight: bold">Then </span><span style="color: #0066BB; font-weight: bold">The created author does exists</span>
+<span style="color: #0066BB; font-weight: bold">...</span>
+</pre></div>
+
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorStepdefs</span> <span style="color: #333333">{</span>
+    <span style="color: #333333">...</span>
+    <span style="color: #555555; font-weight: bold">@When</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;^An author with name \&quot;([^\&quot;]*)\&quot; is added$&quot;</span><span style="color: #333333">)</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">anAuthorWithNameIsAdded</span><span style="color: #333333">(</span>String authorName<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">throws</span> Throwable <span style="color: #333333">{</span>
+        Author author <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Author<span style="color: #333333">(</span>authorName<span style="color: #333333">);</span>
+        Request request <span style="color: #333333">=</span> Request<span style="color: #333333">.</span><span style="color: #0000CC">Post</span><span style="color: #333333">(</span>config<span style="color: #333333">.</span><span style="color: #0000CC">baseUrl</span><span style="color: #333333">.</span><span style="color: #0000CC">resolve</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/v1/authors&quot;</span><span style="color: #333333">))</span>
+                                 <span style="color: #333333">.</span><span style="color: #0000CC">body</span><span style="color: #333333">(</span>JsonHelper<span style="color: #333333">.</span><span style="color: #0000CC">valueToEntity</span><span style="color: #333333">(</span>author<span style="color: #333333">));</span>
+        HttpResponse response <span style="color: #333333">=</span> client<span style="color: #333333">.</span><span style="color: #0000CC">execute</span><span style="color: #333333">(</span>request<span style="color: #333333">);</span>
+
+        assertThat<span style="color: #333333">(</span>response<span style="color: #333333">).</span><span style="color: #0000CC">isCreated</span><span style="color: #333333">().</span><span style="color: #0000CC">hasHeader</span><span style="color: #333333">(</span>HttpHeaders<span style="color: #333333">.</span><span style="color: #0000CC">LOCATION</span><span style="color: #333333">);</span>
+        authorUri <span style="color: #333333">=</span> Optional<span style="color: #333333">.</span><span style="color: #0000CC">of</span><span style="color: #333333">(</span>response<span style="color: #333333">.</span><span style="color: #0000CC">getFirstHeader</span><span style="color: #333333">(</span>HttpHeaders<span style="color: #333333">.</span><span style="color: #0000CC">LOCATION</span><span style="color: #333333">)</span>
+                                        <span style="color: #333333">.</span><span style="color: #0000CC">getValue</span><span style="color: #333333">());</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #555555; font-weight: bold">@Then</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;^The created author does exists$&quot;</span><span style="color: #333333">)</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">theCreatedAuthorDoesExists</span><span style="color: #333333">()</span> <span style="color: #008800; font-weight: bold">throws</span> Throwable <span style="color: #333333">{</span>
+        Request request <span style="color: #333333">=</span> Request<span style="color: #333333">.</span><span style="color: #0000CC">Get</span><span style="color: #333333">(</span>authorUri<span style="color: #333333">.</span><span style="color: #0000CC">orElseThrow</span><span style="color: #333333">(</span>
+            <span style="color: #333333">()</span> <span style="color: #333333">-&gt;</span> <span style="color: #008800; font-weight: bold">new</span> RuntimeException<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author uri not set&quot;</span><span style="color: #333333">)));</span>
+
+        author <span style="color: #333333">=</span> Optional<span style="color: #333333">.</span><span style="color: #0000CC">of</span><span style="color: #333333">(</span>client<span style="color: #333333">.</span><span style="color: #0000CC">executeJson</span><span style="color: #333333">(</span>request<span style="color: #333333">,</span> Author<span style="color: #333333">.</span><span style="color: #0000CC">class</span><span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #333333">...</span>
+</pre></div>
+</p>
+

@@ -1,0 +1,291 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="./css/slidy.css" />
+<link rel="stylesheet" type="text/css" media="screen, projection, print" href="./css/leanovate.css" />
+<script src="./js/slidy.js" charset="utf-8" type="text/javascript"></script>
+<meta name="duration" content="15" />
+<meta name="copyright" content="Copyright Leanovate 2016 (MIT)" />
+</head>
+<body>
+<div class="background">
+    <div class="header"></div>
+</div>
+
+<div class="slide cover">
+    <h1>Testing strategies for micro-services</h1>
+</div>
+
+
+
+
+
+   <div class="slide">
+  <h1>Common scenario</h1>
+
+  <div class="center-box">
+  <img src="./microexchange2016/images/scenario.svg"></img>
+</div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Desired build pipeline</h1>
+
+  <div class="center-box">
+  <img src="./microexchange2016/images/build-pipeline.svg"></img>
+</div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Most common errors</h1>
+
+  <ul class="incremental">
+<li>Data is not where it is expected to be, e.g. ...
+
+<ul>
+<li>... value is missing (even though it is supposed to be required)</li>
+<li>... typo in uri or json field-name</li>
+<li>... misunderstanding about json hierarchy</li>
+</ul></li>
+<li>Data is not in expected format, e.g. ...
+
+<ul>
+<li>... string &quot;true&quot; instead of boolean true</li>
+<li>... integer with unix-timestamp instead of string with iso-datetime</li>
+</ul></li>
+<li>Consumer sends data while provider is in wrong state, e.g. ...
+
+<ul>
+<li>... reference entities that should have been create before</li>
+<li>... value is out of bounds</li>
+</ul></li>
+</ul>
+
+</div>
+
+
+   <div class="slide">
+  <h1>How to avoid most of them</h1>
+
+  <ul class="incremental">
+<li>Provide precise documentation your API</li>
+<li>Developers love to read documentation</li>
+<li>... but hate to write it</li>
+<li>... and forget to update it</li>
+</ul>
+
+</div>
+
+
+   <div class="slide">
+  <h1>Document by example</h1>
+
+  <ul class="incremental">
+<li>Write your own consumer test (or smoke test) for your service
+
+<ul>
+<li>Test your service as near to production as possible (staging environment)</li>
+<li>Integrate it in your deployment chain</li>
+<li>If possible use a BDD test-framework</li>
+</ul></li>
+<li>Log all HTTP requests/responses</li>
+<li>Generate a report from theses logs and automatically publish it where other developers can easily find them</li>
+<li>Optional: Record all html requests with a mock-tool (e.g. <a href="http://wiremock.org/">Wiremock</a>)</li>
+</ul>
+
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Cucumber JVM</h1>
+
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">Feature:</span><span style="color: #0066BB; font-weight: bold"> Manage authors</span>
+<span style="color: #0066BB; font-weight: bold">  </span><span style="color: #008800; font-weight: bold">Scenario:</span><span style="color: #0066BB; font-weight: bold"> Add and remove author</span>
+<span style="color: #0066BB; font-weight: bold">    Given: A running book database</span>
+<span style="color: #008800; font-weight: bold">    When </span><span style="color: #0066BB; font-weight: bold">An author with name &quot;</span><span style="background-color: #fff0f0">Test Writer</span><span style="color: #0066BB; font-weight: bold">&quot; is added</span>
+<span style="color: #0066BB; font-weight: bold">    </span><span style="color: #008800; font-weight: bold">Then </span><span style="color: #0066BB; font-weight: bold">The created author does exists</span>
+<span style="color: #0066BB; font-weight: bold">...</span>
+</pre></div>
+
+
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorStepdefs</span> <span style="color: #333333">{</span>
+    <span style="color: #333333">...</span>
+    <span style="color: #555555; font-weight: bold">@When</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;^An author with name \&quot;([^\&quot;]*)\&quot; is added$&quot;</span><span style="color: #333333">)</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">anAuthorWithNameIsAdded</span><span style="color: #333333">(</span>String authorName<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">throws</span> Throwable <span style="color: #333333">{</span>
+        Author author <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Author<span style="color: #333333">(</span>authorName<span style="color: #333333">);</span>
+        Request request <span style="color: #333333">=</span> Request<span style="color: #333333">.</span><span style="color: #0000CC">Post</span><span style="color: #333333">(</span>config<span style="color: #333333">.</span><span style="color: #0000CC">baseUrl</span><span style="color: #333333">.</span><span style="color: #0000CC">resolve</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/v1/authors&quot;</span><span style="color: #333333">))</span>
+                                 <span style="color: #333333">.</span><span style="color: #0000CC">body</span><span style="color: #333333">(</span>JsonHelper<span style="color: #333333">.</span><span style="color: #0000CC">valueToEntity</span><span style="color: #333333">(</span>author<span style="color: #333333">));</span>
+        HttpResponse response <span style="color: #333333">=</span> client<span style="color: #333333">.</span><span style="color: #0000CC">execute</span><span style="color: #333333">(</span>request<span style="color: #333333">);</span>
+
+        assertThat<span style="color: #333333">(</span>response<span style="color: #333333">).</span><span style="color: #0000CC">isCreated</span><span style="color: #333333">().</span><span style="color: #0000CC">hasHeader</span><span style="color: #333333">(</span>HttpHeaders<span style="color: #333333">.</span><span style="color: #0000CC">LOCATION</span><span style="color: #333333">);</span>
+        authorUri <span style="color: #333333">=</span> Optional<span style="color: #333333">.</span><span style="color: #0000CC">of</span><span style="color: #333333">(</span>response<span style="color: #333333">.</span><span style="color: #0000CC">getFirstHeader</span><span style="color: #333333">(</span>HttpHeaders<span style="color: #333333">.</span><span style="color: #0000CC">LOCATION</span><span style="color: #333333">)</span>
+                                        <span style="color: #333333">.</span><span style="color: #0000CC">getValue</span><span style="color: #333333">());</span>
+    <span style="color: #333333">}</span>
+
+    <span style="color: #555555; font-weight: bold">@Then</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;^The created author does exists$&quot;</span><span style="color: #333333">)</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">theCreatedAuthorDoesExists</span><span style="color: #333333">()</span> <span style="color: #008800; font-weight: bold">throws</span> Throwable <span style="color: #333333">{</span>
+        Request request <span style="color: #333333">=</span> Request<span style="color: #333333">.</span><span style="color: #0000CC">Get</span><span style="color: #333333">(</span>authorUri<span style="color: #333333">.</span><span style="color: #0000CC">orElseThrow</span><span style="color: #333333">(</span>
+            <span style="color: #333333">()</span> <span style="color: #333333">-&gt;</span> <span style="color: #008800; font-weight: bold">new</span> RuntimeException<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author uri not set&quot;</span><span style="color: #333333">)));</span>
+
+        author <span style="color: #333333">=</span> Optional<span style="color: #333333">.</span><span style="color: #0000CC">of</span><span style="color: #333333">(</span>client<span style="color: #333333">.</span><span style="color: #0000CC">executeJson</span><span style="color: #333333">(</span>request<span style="color: #333333">,</span> Author<span style="color: #333333">.</span><span style="color: #0000CC">class</span><span style="color: #333333">));</span>
+    <span style="color: #333333">}</span>
+    <span style="color: #333333">...</span>
+</pre></div>
+</p>
+
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Cucumber HTML report</h1>
+
+  <div class="center-box">
+    <iframe class="center-inline" src="./microexchange2016/cucumber-report/index.html">
+    </iframe>
+</div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Provide API specification</h1>
+
+  <ul class="incremental">
+<li>Document your API with a REST specification (e.g. <a href="http://swagger.io/">Swagger</a> or <a href="http://raml.org/">RAML</a>)</li>
+<li>How to keep the specification in-sync with reality?</li>
+<li>Usual approach: Add lots of annotations to your source-code and generate documentation automatically
+
+<ul>
+<li>Accuracy of the specification highly depends on the framework (jax-rs, Play, Ratpack, liberator, ...)</li>
+<li>No guarantee that a new API version is backward compatible</li>
+</ul></li>
+<li>Advanced approach:
+
+<ul>
+<li>Write specification (before actually writing the code)</li>
+<li>Integrate specification in unit-tests using property-based testing (e.g. <a href="https://www.scalacheck.org/">ScalaCheck</a>)</li>
+</ul></li>
+</ul>
+
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Swagger 2.0 specification</h1>
+
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">swagger: <span style="background-color: #fff0f0">&#39;2.0&#39;</span>
+info:
+  title: Book database API
+  description: Manage all your books
+  version: 1.0.0
+basePath: /v1
+paths:
+  /authors:
+    post:
+      summary: Create a new author
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: <span style="background-color: #fff0f0">&quot;#/definitions/Author&quot;</span>
+      responses:
+        <span style="background-color: #fff0f0">&#39;201&#39;</span>:
+          description: Author successfully created
+          headers:
+            Location:
+              type: string
+              format: uri
+        default:
+          description: Unexpected error
+          schema:
+            $ref: <span style="background-color: #fff0f0">&#39;#/definitions/Error&#39;</span>
+<span style="color: #0e84b5; font-weight: bold">...</span>
+definitions:
+  Author:
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        type: string
+        format: uuid
+        readOnly: true
+      name:
+        type: string
+  Error:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      details:
+        type: array
+        items:
+          type: string
+<span style="color: #0e84b5; font-weight: bold">...</span>
+</pre></div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Check (de-)serializers</h1>
+
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> Specification with ScalaCheck with MustMatchers <span style="color: #333333">{</span>
+  val swaggerCheck <span style="color: #333333">=</span> SwaggerChecks<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;../bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;be receivable&quot;</span> in <span style="color: #333333">{</span>
+      implicit val arbitraryJson <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>CheckJsValue<span style="color: #333333">](</span>
+                                     swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonGenerator</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">))</span>
+      prop <span style="color: #333333">{</span> json<span style="color: #333333">:</span> CheckJsValue <span style="color: #333333">=&gt;</span>
+        Json<span style="color: #333333">.</span><span style="color: #0000CC">parse</span><span style="color: #333333">(</span>json<span style="color: #333333">.</span><span style="color: #0000CC">minified</span><span style="color: #333333">).</span><span style="color: #0000CC">validate</span><span style="color: #333333">[</span>Author<span style="color: #333333">].</span><span style="color: #0000CC">isSuccess</span> must beTrue
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+
+    <span style="background-color: #fff0f0">&quot;be sendable&quot;</span> in <span style="color: #333333">{</span>
+      implicit val arbitraryAuthor <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>Author<span style="color: #333333">](</span><span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">{</span>
+        id <span style="color: #333333">&lt;-</span> Gen<span style="color: #333333">.</span><span style="color: #0000CC">uuid</span>
+        name <span style="color: #333333">&lt;-</span> Arbitrary<span style="color: #333333">.</span><span style="color: #0000CC">arbitrary</span><span style="color: #333333">[</span>String<span style="color: #333333">]</span>
+      <span style="color: #333333">}</span> yield <span style="color: #0066BB; font-weight: bold">Author</span><span style="color: #333333">(</span>id<span style="color: #333333">,</span> name<span style="color: #333333">))</span>
+      val check <span style="color: #333333">=</span> swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonVerifier</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">)</span>
+
+      prop <span style="color: #333333">{</span> author<span style="color: #333333">:</span> Author <span style="color: #333333">=&gt;</span>
+        check<span style="color: #333333">.</span><span style="color: #0000CC">verify</span><span style="color: #333333">(</span>Json<span style="color: #333333">.</span><span style="color: #0000CC">stringify</span><span style="color: #333333">(</span>Json<span style="color: #333333">.</span><span style="color: #0000CC">toJson</span><span style="color: #333333">(</span>author<span style="color: #333333">))).</span><span style="color: #0000CC">isSuccess</span> must beTrue
+      <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Test specification vs. reality</h1>
+
+  
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Test router</h1>
+
+  
+</div>
+
+
