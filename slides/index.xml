@@ -250,7 +250,7 @@ definitions:
     </item>
     
     <item>
-      <title>Example: Check (de-)serializers</title>
+      <title>Example: Check serializers</title>
       <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/10-test-serializers.html</link>
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
@@ -259,23 +259,19 @@ definitions:
   val swaggerCheck &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; SwaggerChecks&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; File&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;../bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
   &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be receivable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-      implicit val arbitraryJson &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;CheckJsValue&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;
-                                     swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonGenerator&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
-      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt; json&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; CheckJsValue &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
-        Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;minified&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;validate&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;].&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;isSuccess&lt;/span&gt; must beTrue
-      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
-    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
-
     &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be sendable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
       implicit val arbitraryAuthor &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
         id &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Gen&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;uuid&lt;/span&gt;
         name &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;String&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
       &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt; yield &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;id&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; name&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
-      val check &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonVerifier&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
 
-      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt; author&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; Author &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
-        check&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;verify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;stringify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toJson&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;))).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;isSuccess&lt;/span&gt; must beTrue
+      val verifier &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonVerifier&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        author&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; Author &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+          val json &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;stringify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toJson&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+          verifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;verify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; must be equalTo ValidationResult&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;success&lt;/span&gt;
       &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
     &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
   &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
@@ -286,12 +282,31 @@ definitions:
     </item>
     
     <item>
-      <title>Test specification vs. reality</title>
-      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-specification.html</link>
+      <title>Example: Check deserializers</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-deserializers.html</link>
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
-      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-specification.html</guid>
-      <description></description>
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-deserializers.html</guid>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; Specification with ScalaCheck with MustMatchers &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  val swaggerCheck &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; SwaggerChecks&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; File&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;../bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be receivable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+      implicit val arbitraryJson &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;CheckJsValue&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;
+                                     swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonGenerator&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        json&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; CheckJsValue &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+          val &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;JsSuccess&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;_&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; path&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;minified&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;validate&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+          path&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; must be equalTo &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
     </item>
     
     <item>
