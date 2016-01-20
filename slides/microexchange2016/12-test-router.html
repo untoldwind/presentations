@@ -1,1 +1,21 @@
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RouterSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;Router&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;have all specified routes&quot;</span> in <span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryRequest <span style="color: #008800; font-weight: bold">=</span>
+        <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">FakeRequest</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]](</span>swaggerCheck<span style="color: #333333">.</span>requestGenerator<span style="color: #333333">())</span>
+
+      prop <span style="color: #333333">{</span>
+        request<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">FakeRequest</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]</span> <span style="color: #008800; font-weight: bold">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> router <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Play</span><span style="color: #333333">.</span>current<span style="color: #333333">.</span>injector<span style="color: #333333">.</span>instanceOf<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">Router</span><span style="color: #333333">]</span>
+          <span style="color: #008800; font-weight: bold">val</span> handler <span style="color: #008800; font-weight: bold">=</span> router<span style="color: #333333">.</span>handlerFor<span style="color: #333333">(</span>request<span style="color: #333333">)</span>
+
+          handler<span style="color: #333333">.</span>isDefined aka <span style="background-color: #fff0f0">s&quot;Handler for </span><span style="background-color: #eeeeee">${</span>request<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span> must beTrue
+      <span style="color: #333333">}.</span>setContext<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">WithApplication</span><span style="color: #333333">()</span> <span style="color: #333333">{})</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
 

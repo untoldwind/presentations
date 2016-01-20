@@ -16,7 +16,7 @@
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</guid>
       <description>&lt;div class=&#34;center-box&#34;&gt;
-  &lt;img src=&#34;../../microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
+  &lt;img src=&#34;../../slides/microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
 &lt;/div&gt;
 
 </description>
@@ -29,7 +29,7 @@
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</guid>
       <description>&lt;div class=&#34;center-box&#34;&gt;
-  &lt;img src=&#34;../../microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
+  &lt;img src=&#34;../../slides/microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
 &lt;/div&gt;
 
 </description>
@@ -62,19 +62,19 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/11-test-deserializers.html</guid>
-      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; Specification with ScalaCheck with MustMatchers &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-  val swaggerCheck &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; SwaggerChecks&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; File&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;../bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Specification&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ScalaCheck&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;MustMatchers&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; swaggerCheck &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;SwaggerChecks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
   &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be receivable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-      implicit val arbitraryJson &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;CheckJsValue&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;
-                                     swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonGenerator&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;implicit&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; arbitraryJson &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;CheckJsValue&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;
+                                     swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;jsonGenerator&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
       prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-        json&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; CheckJsValue &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
-          val &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;JsSuccess&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;_&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; path&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;parse&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;minified&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;validate&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+        json&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;CheckJsValue&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+          &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;JsSuccess&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; path&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Json&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;parse&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;minified&lt;span style=&#34;color: #333333&#34;&gt;).&lt;/span&gt;validate&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
 
-          path&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toString&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; must be equalTo &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+          path&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;toString&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; must be equalTo &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
       &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
     &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
   &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
@@ -90,23 +90,24 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/10-test-serializers.html</guid>
-      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; Specification with ScalaCheck with MustMatchers &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-  val swaggerCheck &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; SwaggerChecks&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; File&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;../bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Specification&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ScalaCheck&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;MustMatchers&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; swaggerCheck &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;SwaggerChecks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
   &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;be sendable&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-      implicit val arbitraryAuthor &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;Author&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-        id &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Gen&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;uuid&lt;/span&gt;
-        name &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;-&lt;/span&gt; Arbitrary&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;String&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt; yield &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;id&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; name&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;implicit&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; arbitraryAuthor &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        id &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Gen&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;uuid
+        name &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+        description &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;arbitrary&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Option&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]]&lt;/span&gt;
+      &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;yield&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Author&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;id&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; name&lt;span style=&#34;color: #333333&#34;&gt;,&lt;/span&gt; description&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
-      val verifier &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;jsonVerifier&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; verifier &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;jsonVerifier&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Author&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
 
       prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
-        author&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; Author &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
-          val json &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;stringify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;Json&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;toJson&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+        author&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Author&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+          &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; json &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Json&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;stringify&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Json&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;toJson&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;author&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
 
-          verifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;verify&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; must be equalTo ValidationResult&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;success&lt;/span&gt;
+          verifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;verify&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;json&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; must be equalTo &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ValidationResult&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;success
       &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
     &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
   &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
@@ -123,7 +124,7 @@
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</guid>
       <description>&lt;div class=&#34;center-box&#34;&gt;
-    &lt;iframe class=&#34;center-inline&#34; src=&#34;../../microexchange2016/cucumber-report/index.html&#34;&gt;
+    &lt;iframe class=&#34;center-inline&#34; src=&#34;../../slides/microexchange2016/cucumber-report/index.html&#34;&gt;
     &lt;/iframe&gt;
 &lt;/div&gt;
 
@@ -218,6 +219,8 @@ definitions:
         readOnly: true
       name:
         type: string
+      description:
+        type: string
   Error:
     type: object
     required:
@@ -240,12 +243,84 @@ definitions:
     </item>
     
     <item>
+      <title>Example: Test controller</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/13-contoller-test.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/13-contoller-test.html</guid>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;AuthorsControllerSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;PlaySpecification&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ScalaCheck&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Mockito&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; swaggerCheck &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;SwaggerChecks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;AuthorsController&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;handle all /authors routes&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;implicit&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; arbitraryRequest &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt;
+        &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;PlayOperationVerifier&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;](&lt;/span&gt;swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;operationVerifier&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;_&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;startsWith&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;/v1/authors&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;)))&lt;/span&gt;
+
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        requestVerifier&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;PlayOperationVerifier&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt;
+          &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Some&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;result&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; route&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;requestVerifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+
+          requestVerifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;responseVerifier&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;verify&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;result&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; must be equalTo &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ValidationResult&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;success
+      &lt;span style=&#34;color: #333333&#34;&gt;}.&lt;/span&gt;setContext&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;WithApplication&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;testApp&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{})&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; testApp&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; mockAuthorDAO &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;AuthorDAO&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+
+&lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt; setup mockAuthorDAO &lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
+
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;GuiceApplicationBuilder&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt;
+      &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;overrides&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;bind&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;AuthorDAO&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;].&lt;/span&gt;toInstance&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;mockAuthorDAO&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+      &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;build&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt;
+  &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
       <title>Example: Test router</title>
       <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</link>
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</guid>
-      <description></description>
+      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;RouterSpec&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;PlaySpecification&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;ScalaCheck&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; swaggerCheck &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;SwaggerChecks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;bookdb_api.yaml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
+
+  &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;Router&amp;quot;&lt;/span&gt; should &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;have all specified routes&amp;quot;&lt;/span&gt; in &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;implicit&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; arbitraryRequest &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt;
+        &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Arbitrary&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;FakeRequest&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]](&lt;/span&gt;swaggerCheck&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;requestGenerator&lt;span style=&#34;color: #333333&#34;&gt;())&lt;/span&gt;
+
+      prop &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
+        request&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;FakeRequest&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&amp;gt;&lt;/span&gt;
+          &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; router &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;Play&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;current&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;injector&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;instanceOf&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Router&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+          &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; handler &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; router&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;handlerFor&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;request&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt;
+
+          handler&lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;isDefined aka &lt;span style=&#34;background-color: #fff0f0&#34;&gt;s&amp;quot;Handler for &lt;/span&gt;&lt;span style=&#34;background-color: #eeeeee&#34;&gt;${&lt;/span&gt;request&lt;span style=&#34;background-color: #eeeeee&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt; must beTrue
+      &lt;span style=&#34;color: #333333&#34;&gt;}.&lt;/span&gt;setContext&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;WithApplication&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{})&lt;/span&gt;
+    &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #333333&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Further reading</title>
+      <link>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/14-further-reading.html</link>
+      <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
+      
+      <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/14-further-reading.html</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;SwaggerCheck: &lt;a href=&#34;https://github.com/leanovate/swagger-check&#34;&gt;https://github.com/leanovate/swagger-check&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Cucumber REST helper: &lt;a href=&#34;https://github.com/leanovate/cucumber-rest-helper&#34;&gt;https://github.com/leanovate/cucumber-rest-helper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Book db sample: &lt;a href=&#34;https://github.com/leanovate/book-db-sample&#34;&gt;https://github.com/leanovate/book-db-sample&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>

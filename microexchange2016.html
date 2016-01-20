@@ -23,7 +23,7 @@
   <h1>Common scenario</h1>
 
   <div class="center-box">
-  <img src="./microexchange2016/images/scenario.svg"></img>
+  <img src="./slides/microexchange2016/images/scenario.svg"></img>
 </div>
 
 
@@ -34,7 +34,7 @@
   <h1>Desired build pipeline</h1>
 
   <div class="center-box">
-  <img src="./microexchange2016/images/build-pipeline.svg"></img>
+  <img src="./slides/microexchange2016/images/build-pipeline.svg"></img>
 </div>
 
 
@@ -145,7 +145,7 @@
   <h1>Example: Cucumber HTML report</h1>
 
   <div class="center-box">
-    <iframe class="center-inline" src="./microexchange2016/cucumber-report/index.html">
+    <iframe class="center-inline" src="./slides/microexchange2016/cucumber-report/index.html">
     </iframe>
 </div>
 
@@ -219,6 +219,8 @@ definitions:
         readOnly: true
       name:
         type: string
+      description:
+        type: string
   Error:
     type: object
     required:
@@ -244,23 +246,24 @@ definitions:
    <div class="slide">
   <h1>Example: Check serializers</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> Specification with ScalaCheck with MustMatchers <span style="color: #333333">{</span>
-  val swaggerCheck <span style="color: #333333">=</span> SwaggerChecks<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;../bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
     <span style="background-color: #fff0f0">&quot;be sendable&quot;</span> in <span style="color: #333333">{</span>
-      implicit val arbitraryAuthor <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>Author<span style="color: #333333">](</span><span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">{</span>
-        id <span style="color: #333333">&lt;-</span> Gen<span style="color: #333333">.</span><span style="color: #0000CC">uuid</span>
-        name <span style="color: #333333">&lt;-</span> Arbitrary<span style="color: #333333">.</span><span style="color: #0000CC">arbitrary</span><span style="color: #333333">[</span>String<span style="color: #333333">]</span>
-      <span style="color: #333333">}</span> yield <span style="color: #0066BB; font-weight: bold">Author</span><span style="color: #333333">(</span>id<span style="color: #333333">,</span> name<span style="color: #333333">))</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryAuthor <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">Author</span><span style="color: #333333">](</span><span style="color: #008800; font-weight: bold">for</span> <span style="color: #333333">{</span>
+        id <span style="color: #008800; font-weight: bold">&lt;-</span> <span style="color: #BB0066; font-weight: bold">Gen</span><span style="color: #333333">.</span>uuid
+        name <span style="color: #008800; font-weight: bold">&lt;-</span> <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">.</span>arbitrary<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]</span>
+        description <span style="color: #008800; font-weight: bold">&lt;-</span> <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">.</span>arbitrary<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">Option</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]]</span>
+      <span style="color: #333333">}</span> <span style="color: #008800; font-weight: bold">yield</span> <span style="color: #BB0066; font-weight: bold">Author</span><span style="color: #333333">(</span>id<span style="color: #333333">,</span> name<span style="color: #333333">,</span> description<span style="color: #333333">))</span>
 
-      val verifier <span style="color: #333333">=</span> swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonVerifier</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">)</span>
+      <span style="color: #008800; font-weight: bold">val</span> verifier <span style="color: #008800; font-weight: bold">=</span> swaggerCheck<span style="color: #333333">.</span>jsonVerifier<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">)</span>
 
       prop <span style="color: #333333">{</span>
-        author<span style="color: #333333">:</span> Author <span style="color: #333333">=&gt;</span>
-          val json <span style="color: #333333">=</span> Json<span style="color: #333333">.</span><span style="color: #0000CC">stringify</span><span style="color: #333333">(</span>Json<span style="color: #333333">.</span><span style="color: #0000CC">toJson</span><span style="color: #333333">(</span>author<span style="color: #333333">))</span>
+        author<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">Author</span> <span style="color: #333333">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> json <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Json</span><span style="color: #333333">.</span>stringify<span style="color: #333333">(</span><span style="color: #BB0066; font-weight: bold">Json</span><span style="color: #333333">.</span>toJson<span style="color: #333333">(</span>author<span style="color: #333333">))</span>
 
-          verifier<span style="color: #333333">.</span><span style="color: #0000CC">verify</span><span style="color: #333333">(</span>json<span style="color: #333333">)</span> must be equalTo ValidationResult<span style="color: #333333">.</span><span style="color: #0000CC">success</span>
+          verifier<span style="color: #333333">.</span>verify<span style="color: #333333">(</span>json<span style="color: #333333">)</span> must be equalTo <span style="color: #BB0066; font-weight: bold">ValidationResult</span><span style="color: #333333">.</span>success
       <span style="color: #333333">}</span>
     <span style="color: #333333">}</span>
   <span style="color: #333333">}</span>
@@ -274,19 +277,19 @@ definitions:
    <div class="slide">
   <h1>Example: Check deserializers</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> Specification with ScalaCheck with MustMatchers <span style="color: #333333">{</span>
-  val swaggerCheck <span style="color: #333333">=</span> SwaggerChecks<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> File<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;../bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
     <span style="background-color: #fff0f0">&quot;be receivable&quot;</span> in <span style="color: #333333">{</span>
-      implicit val arbitraryJson <span style="color: #333333">=</span> Arbitrary<span style="color: #333333">[</span>CheckJsValue<span style="color: #333333">](</span>
-                                     swaggerCheck<span style="color: #333333">.</span><span style="color: #0000CC">jsonGenerator</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">))</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryJson <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">CheckJsValue</span><span style="color: #333333">](</span>
+                                     swaggerCheck<span style="color: #333333">.</span>jsonGenerator<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;Author&quot;</span><span style="color: #333333">))</span>
 
       prop <span style="color: #333333">{</span>
-        json<span style="color: #333333">:</span> CheckJsValue <span style="color: #333333">=&gt;</span>
-          val <span style="color: #0066BB; font-weight: bold">JsSuccess</span><span style="color: #333333">(</span>_<span style="color: #333333">,</span> path<span style="color: #333333">)</span> <span style="color: #333333">=</span> Json<span style="color: #333333">.</span><span style="color: #0000CC">parse</span><span style="color: #333333">(</span>json<span style="color: #333333">.</span><span style="color: #0000CC">minified</span><span style="color: #333333">).</span><span style="color: #0000CC">validate</span><span style="color: #333333">[</span>Author<span style="color: #333333">]</span>
+        json<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">CheckJsValue</span> <span style="color: #333333">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> <span style="color: #BB0066; font-weight: bold">JsSuccess</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">_</span><span style="color: #333333">,</span> path<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Json</span><span style="color: #333333">.</span>parse<span style="color: #333333">(</span>json<span style="color: #333333">.</span>minified<span style="color: #333333">).</span>validate<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">Author</span><span style="color: #333333">]</span>
 
-          path<span style="color: #333333">.</span><span style="color: #0000CC">toString</span><span style="color: #333333">()</span> must be equalTo <span style="background-color: #fff0f0">&quot;&quot;</span>
+          path<span style="color: #333333">.</span>toString<span style="color: #333333">()</span> must be equalTo <span style="background-color: #fff0f0">&quot;&quot;</span>
       <span style="color: #333333">}</span>
     <span style="color: #333333">}</span>
   <span style="color: #333333">}</span>
@@ -300,7 +303,75 @@ definitions:
    <div class="slide">
   <h1>Example: Test router</h1>
 
-  
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RouterSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;Router&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;have all specified routes&quot;</span> in <span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryRequest <span style="color: #008800; font-weight: bold">=</span>
+        <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">FakeRequest</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]](</span>swaggerCheck<span style="color: #333333">.</span>requestGenerator<span style="color: #333333">())</span>
+
+      prop <span style="color: #333333">{</span>
+        request<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">FakeRequest</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">String</span><span style="color: #333333">]</span> <span style="color: #008800; font-weight: bold">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> router <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">Play</span><span style="color: #333333">.</span>current<span style="color: #333333">.</span>injector<span style="color: #333333">.</span>instanceOf<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">Router</span><span style="color: #333333">]</span>
+          <span style="color: #008800; font-weight: bold">val</span> handler <span style="color: #008800; font-weight: bold">=</span> router<span style="color: #333333">.</span>handlerFor<span style="color: #333333">(</span>request<span style="color: #333333">)</span>
+
+          handler<span style="color: #333333">.</span>isDefined aka <span style="background-color: #fff0f0">s&quot;Handler for </span><span style="background-color: #eeeeee">${</span>request<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span> must beTrue
+      <span style="color: #333333">}.</span>setContext<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">WithApplication</span><span style="color: #333333">()</span> <span style="color: #333333">{})</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Example: Test controller</h1>
+
+  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorsControllerSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">Mockito</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;AuthorsController&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;handle all /authors routes&quot;</span> in <span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryRequest <span style="color: #008800; font-weight: bold">=</span>
+        <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">PlayOperationVerifier</span><span style="color: #333333">](</span>swaggerCheck<span style="color: #333333">.</span>operationVerifier<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">_</span><span style="color: #333333">.</span>startsWith<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/v1/authors&quot;</span><span style="color: #333333">)))</span>
+
+      prop <span style="color: #333333">{</span>
+        requestVerifier<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">PlayOperationVerifier</span> <span style="color: #333333">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> <span style="color: #BB0066; font-weight: bold">Some</span><span style="color: #333333">(</span>result<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">=</span> route<span style="color: #333333">(</span>requestVerifier<span style="color: #333333">.</span>request<span style="color: #333333">)</span>
+
+          requestVerifier<span style="color: #333333">.</span>responseVerifier<span style="color: #333333">.</span>verify<span style="color: #333333">(</span>result<span style="color: #333333">)</span> must be equalTo <span style="color: #BB0066; font-weight: bold">ValidationResult</span><span style="color: #333333">.</span>success
+      <span style="color: #333333">}.</span>setContext<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">WithApplication</span><span style="color: #333333">(</span>testApp<span style="color: #333333">)</span> <span style="color: #333333">{})</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">def</span> testApp<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">Application</span> <span style="color: #333333">=</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">val</span> mockAuthorDAO <span style="color: #008800; font-weight: bold">=</span> mock<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">]</span>
+
+<span style="color: #333333">...</span> setup mockAuthorDAO <span style="color: #333333">...</span>
+
+    <span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">GuiceApplicationBuilder</span><span style="color: #333333">()</span>
+      <span style="color: #333333">.</span>overrides<span style="color: #333333">(</span>bind<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">].</span>toInstance<span style="color: #333333">(</span>mockAuthorDAO<span style="color: #333333">))</span>
+      <span style="color: #333333">.</span>build<span style="color: #333333">()</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
+</div>
+
+
+   <div class="slide">
+  <h1>Further reading</h1>
+
+  <ul>
+<li>SwaggerCheck: <a href="https://github.com/leanovate/swagger-check">https://github.com/leanovate/swagger-check</a></li>
+<li>Cucumber REST helper: <a href="https://github.com/leanovate/cucumber-rest-helper">https://github.com/leanovate/cucumber-rest-helper</a></li>
+<li>Book db sample: <a href="https://github.com/leanovate/book-db-sample">https://github.com/leanovate/book-db-sample</a></li>
+</ul>
+
 </div>
 
 

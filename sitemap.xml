@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/cucumber-report.html</loc>
+  </url>
+  
+  <url>
     <loc>http://replace-this-with-your-hugo-site.com/microexchange2016.html</loc>
   </url>
   
@@ -67,6 +71,16 @@
   
   <url>
     <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/12-test-router.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/13-contoller-test.html</loc>
+    <lastmod>2016-01-12T18:01:10+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/14-further-reading.html</loc>
     <lastmod>2016-01-12T18:01:10+01:00</lastmod>
   </url>
   

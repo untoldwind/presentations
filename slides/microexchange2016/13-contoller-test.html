@@ -1,0 +1,30 @@
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorsControllerSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">Mockito</span> <span style="color: #333333">{</span>
+  <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
+
+  <span style="background-color: #fff0f0">&quot;AuthorsController&quot;</span> should <span style="color: #333333">{</span>
+    <span style="background-color: #fff0f0">&quot;handle all /authors routes&quot;</span> in <span style="color: #333333">{</span>
+      <span style="color: #008800; font-weight: bold">implicit</span> <span style="color: #008800; font-weight: bold">val</span> arbitraryRequest <span style="color: #008800; font-weight: bold">=</span>
+        <span style="color: #BB0066; font-weight: bold">Arbitrary</span><span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">PlayOperationVerifier</span><span style="color: #333333">](</span>swaggerCheck<span style="color: #333333">.</span>operationVerifier<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">_</span><span style="color: #333333">.</span>startsWith<span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/v1/authors&quot;</span><span style="color: #333333">)))</span>
+
+      prop <span style="color: #333333">{</span>
+        requestVerifier<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">PlayOperationVerifier</span> <span style="color: #333333">=&gt;</span>
+          <span style="color: #008800; font-weight: bold">val</span> <span style="color: #BB0066; font-weight: bold">Some</span><span style="color: #333333">(</span>result<span style="color: #333333">)</span> <span style="color: #008800; font-weight: bold">=</span> route<span style="color: #333333">(</span>requestVerifier<span style="color: #333333">.</span>request<span style="color: #333333">)</span>
+
+          requestVerifier<span style="color: #333333">.</span>responseVerifier<span style="color: #333333">.</span>verify<span style="color: #333333">(</span>result<span style="color: #333333">)</span> must be equalTo <span style="color: #BB0066; font-weight: bold">ValidationResult</span><span style="color: #333333">.</span>success
+      <span style="color: #333333">}.</span>setContext<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">WithApplication</span><span style="color: #333333">(</span>testApp<span style="color: #333333">)</span> <span style="color: #333333">{})</span>
+    <span style="color: #333333">}</span>
+  <span style="color: #333333">}</span>
+
+  <span style="color: #008800; font-weight: bold">def</span> testApp<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">Application</span> <span style="color: #333333">=</span> <span style="color: #333333">{</span>
+    <span style="color: #008800; font-weight: bold">val</span> mockAuthorDAO <span style="color: #008800; font-weight: bold">=</span> mock<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">]</span>
+
+<span style="color: #333333">...</span> setup mockAuthorDAO <span style="color: #333333">...</span>
+
+    <span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">GuiceApplicationBuilder</span><span style="color: #333333">()</span>
+      <span style="color: #333333">.</span>overrides<span style="color: #333333">(</span>bind<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">].</span>toInstance<span style="color: #333333">(</span>mockAuthorDAO<span style="color: #333333">))</span>
+      <span style="color: #333333">.</span>build<span style="color: #333333">()</span>
+  <span style="color: #333333">}</span>
+<span style="color: #333333">}</span>
+</pre></div>
+
+
