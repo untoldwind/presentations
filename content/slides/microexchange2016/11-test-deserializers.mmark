@@ -5,7 +5,7 @@ weight = 11
 presentations = ["microexchange2016"]
 +++
 
-{{< highlight "java" >}}
+{{< highlight "scala" >}}
 class AuthorSpec extends Specification with ScalaCheck with MustMatchers {
   val swaggerCheck = SwaggerChecks(new File("bookdb_api.yaml"))
 
