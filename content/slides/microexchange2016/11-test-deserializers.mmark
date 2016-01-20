@@ -7,7 +7,7 @@ presentations = ["microexchange2016"]
 
 {{< highlight "java" >}}
 class AuthorSpec extends Specification with ScalaCheck with MustMatchers {
-  val swaggerCheck = SwaggerChecks(new File("../bookdb_api.yaml"))
+  val swaggerCheck = SwaggerChecks(new File("bookdb_api.yaml"))
 
   "Author" should {
     "be receivable" in {

@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 221599188,
+  "duration": 360412864,
   "status": "passed"
 });
 formatter.scenario({
@@ -52,19 +52,19 @@ formatter.match({
   ],
   "location": "AuthorStepdefs.anAuthorWithNameIsAdded(String)"
 });
-formatter.write("POST /v1/authors HTTP/1.1\nContent-Length: 32\nContent-Type: application/json; charset\u003dUTF-8\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n\n{\n  \"id\" : null,\n  \"name\" : \"Test Writer\"\n}");
-formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/authors/a0c1582b-348d-4bd7-b428-1d497b7a1990\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
+formatter.write("POST /v1/authors HTTP/1.1\nContent-Length: 51\nContent-Type: application/json; charset\u003dUTF-8\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n\n{\n  \"id\" : null,\n  \"name\" : \"Test Writer\",\n  \"description\" : null\n}");
+formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/authors/94a052c8-c634-4d18-8847-3e6e61579062\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
 formatter.result({
-  "duration": 5745824281,
+  "duration": 5317196402,
   "status": "passed"
 });
 formatter.match({
   "location": "AuthorStepdefs.theCreatedAuthorDoesExists()"
 });
-formatter.write("GET /v1/authors/a0c1582b-348d-4bd7-b428-1d497b7a1990 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 66\n\n{\n  \"id\" : \"a0c1582b-348d-4bd7-b428-1d497b7a1990\",\n  \"name\" : \"Test Writer\"\n}");
+formatter.write("GET /v1/authors/94a052c8-c634-4d18-8847-3e6e61579062 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 66\n\n{\n  \"id\" : \"94a052c8-c634-4d18-8847-3e6e61579062\",\n  \"name\" : \"Test Writer\"\n}");
 formatter.result({
-  "duration": 22717855,
+  "duration": 350668295,
   "status": "passed"
 });
 formatter.match({
@@ -77,25 +77,25 @@ formatter.match({
   "location": "AuthorStepdefs.theAuthorHasTheName(String)"
 });
 formatter.result({
-  "duration": 331516,
+  "duration": 585639,
   "status": "passed"
 });
 formatter.match({
   "location": "AuthorStepdefs.theAuthorIsDeleted()"
 });
-formatter.write("DELETE /v1/authors/a0c1582b-348d-4bd7-b428-1d497b7a1990 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 204 No Content\nDate: Mon, 18 Jan 2016 07:07:39 GMT\n");
+formatter.write("DELETE /v1/authors/94a052c8-c634-4d18-8847-3e6e61579062 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 204 No Content\nDate: Wed, 20 Jan 2016 08:47:43 GMT\n");
 formatter.result({
-  "duration": 9274772,
+  "duration": 49810602,
   "status": "passed"
 });
 formatter.match({
   "location": "AuthorStepdefs.theAuthorDoesNotExists()"
 });
-formatter.write("GET /v1/authors/a0c1582b-348d-4bd7-b428-1d497b7a1990 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 79\n\n{\n  \"code\" : 404,\n  \"message\" : \"No author with id a0c1582b-348d-4bd7-b428-1d497b7a1990\"\n}");
+formatter.write("GET /v1/authors/94a052c8-c634-4d18-8847-3e6e61579062 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 79\n\n{\n  \"code\" : 404,\n  \"message\" : \"No author with id 94a052c8-c634-4d18-8847-3e6e61579062\"\n}");
 formatter.result({
-  "duration": 20409015,
+  "duration": 61752556,
   "status": "passed"
 });
 formatter.uri("de/leanovate/bookdb/blackbox/books.feature");
@@ -107,7 +107,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 2929197,
+  "duration": 8258864,
   "status": "passed"
 });
 formatter.scenario({
@@ -153,18 +153,18 @@ formatter.match({
   "location": "BookStepdefs.aBookWithTitleWithoutAuthorIsCreated(String)"
 });
 formatter.write("POST /v1/books HTTP/1.1\nContent-Length: 69\nContent-Type: application/json; charset\u003dUTF-8\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n\n{\n  \"id\" : null,\n  \"title\" : \"Da Book\",\n  \"summary\" : null,\n  \"isbn\" : null,\n  \"authors\" : [ ]\n}");
-formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/books/a1c04183-0c29-4968-99bc-04288e2d6f8e\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
+formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/books/34c5e0ee-12e9-4eca-935e-0542e391c0b3\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
 formatter.result({
-  "duration": 26013456,
+  "duration": 141939761,
   "status": "passed"
 });
 formatter.match({
   "location": "BookStepdefs.theCreatedBookCanBeOpened()"
 });
-formatter.write("GET /v1/books/a1c04183-0c29-4968-99bc-04288e2d6f8e HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 76\n\n{\n  \"id\" : \"a1c04183-0c29-4968-99bc-04288e2d6f8e\",\n  \"title\" : \"Da Book\",\n  \"authors\" : [ ]\n}");
+formatter.write("GET /v1/books/34c5e0ee-12e9-4eca-935e-0542e391c0b3 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 76\n\n{\n  \"id\" : \"34c5e0ee-12e9-4eca-935e-0542e391c0b3\",\n  \"title\" : \"Da Book\",\n  \"authors\" : [ ]\n}");
 formatter.result({
-  "duration": 49092165,
+  "duration": 114028267,
   "status": "passed"
 });
 formatter.match({
@@ -177,25 +177,25 @@ formatter.match({
   "location": "BookStepdefs.theBookHasTheTitle(String)"
 });
 formatter.result({
-  "duration": 321112,
+  "duration": 999416,
   "status": "passed"
 });
 formatter.match({
   "location": "BookStepdefs.theBookIsDeleted()"
 });
-formatter.write("DELETE /v1/books/a1c04183-0c29-4968-99bc-04288e2d6f8e HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 204 No Content\nDate: Mon, 18 Jan 2016 07:07:39 GMT\n");
+formatter.write("DELETE /v1/books/34c5e0ee-12e9-4eca-935e-0542e391c0b3 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 204 No Content\nDate: Wed, 20 Jan 2016 08:47:43 GMT\n");
 formatter.result({
-  "duration": 12593657,
+  "duration": 97768159,
   "status": "passed"
 });
 formatter.match({
   "location": "BookStepdefs.theBookDoesNotExists()"
 });
-formatter.write("GET /v1/books/a1c04183-0c29-4968-99bc-04288e2d6f8e HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 77\n\n{\n  \"code\" : 404,\n  \"message\" : \"No book with id a1c04183-0c29-4968-99bc-04288e2d6f8e\"\n}");
+formatter.write("GET /v1/books/34c5e0ee-12e9-4eca-935e-0542e391c0b3 HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
+formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:43 GMT\nContent-Length: 77\n\n{\n  \"code\" : 404,\n  \"message\" : \"No book with id 34c5e0ee-12e9-4eca-935e-0542e391c0b3\"\n}");
 formatter.result({
-  "duration": 11597476,
+  "duration": 26536100,
   "status": "passed"
 });
 formatter.uri("de/leanovate/bookdb/blackbox/genres.feature");
@@ -207,7 +207,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 2205508,
+  "duration": 7388231,
   "status": "passed"
 });
 formatter.scenario({
@@ -248,9 +248,9 @@ formatter.match({
   "location": "GenreStepdefs.a_genre_is_added(String)"
 });
 formatter.write("POST /v1/genres HTTP/1.1\nContent-Length: 63\nContent-Type: application/json; charset\u003dUTF-8\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n\n{\n  \"name\" : \"test_genre\",\n  \"description\" : \"Description of test_genre\"\n}");
-formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/genres/test_genre\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
+formatter.write("HTTP/1.1 201 Created\nLocation: http://localhost:8080/v1/genres/test_genre\nDate: Wed, 20 Jan 2016 08:47:44 GMT\nContent-Length: 0\n\n\u003c\u003c\u003c\u003c empty body \u003e\u003e\u003e\u003e");
 formatter.result({
-  "duration": 10998933,
+  "duration": 80497167,
   "status": "passed"
 });
 formatter.match({
@@ -263,9 +263,9 @@ formatter.match({
   "location": "GenreStepdefs.theGenreExists(String)"
 });
 formatter.write("GET /v1/genres/test_genre HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 63\n\n{\n  \"name\" : \"test_genre\",\n  \"description\" : \"Description of test_genre\"\n}");
+formatter.write("HTTP/1.1 200 OK\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:44 GMT\nContent-Length: 63\n\n{\n  \"name\" : \"test_genre\",\n  \"description\" : \"Description of test_genre\"\n}");
 formatter.result({
-  "duration": 6913921,
+  "duration": 35348382,
   "status": "passed"
 });
 formatter.match({
@@ -278,9 +278,9 @@ formatter.match({
   "location": "GenreStepdefs.theGenreIsDeleted(String)"
 });
 formatter.write("DELETE /v1/genres/test_genre HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 204 No Content\nDate: Mon, 18 Jan 2016 07:07:39 GMT\n");
+formatter.write("HTTP/1.1 204 No Content\nDate: Wed, 20 Jan 2016 08:47:44 GMT\n");
 formatter.result({
-  "duration": 7523088,
+  "duration": 36444998,
   "status": "passed"
 });
 formatter.match({
@@ -293,9 +293,9 @@ formatter.match({
   "location": "GenreStepdefs.theGenreDoesNotExists(String)"
 });
 formatter.write("GET /v1/genres/test_genre HTTP/1.1\nHost: localhost:8080\nConnection: Keep-Alive\nUser-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_66)\nAccept-Encoding: gzip,deflate\n");
-formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Mon, 18 Jan 2016 07:07:39 GMT\nContent-Length: 54\n\n{\n  \"code\" : 404,\n  \"message\" : \"No genre with name test_genre\"\n}");
+formatter.write("HTTP/1.1 404 Not Found\nContent-Type: application/json; charset\u003dutf-8\nDate: Wed, 20 Jan 2016 08:47:44 GMT\nContent-Length: 54\n\n{\n  \"code\" : 404,\n  \"message\" : \"No genre with name test_genre\"\n}");
 formatter.result({
-  "duration": 4748271,
+  "duration": 13170311,
   "status": "passed"
 });
 });

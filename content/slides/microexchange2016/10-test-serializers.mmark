@@ -7,14 +7,15 @@ presentations = ["microexchange2016"]
 
 {{< highlight "java" >}}
 class AuthorSpec extends Specification with ScalaCheck with MustMatchers {
-  val swaggerCheck = SwaggerChecks(new File("../bookdb_api.yaml"))
+  val swaggerCheck = SwaggerChecks(new File("bookdb_api.yaml"))
 
   "Author" should {
     "be sendable" in {
       implicit val arbitraryAuthor = Arbitrary[Author](for {
         id <- Gen.uuid
         name <- Arbitrary.arbitrary[String]
-      } yield Author(id, name))
+        description <- Arbitrary.arbitrary[Option[String]]
+      } yield Author(id, name, description))
 
       val verifier = swaggerCheck.jsonVerifier("Author")
 
