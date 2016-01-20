@@ -5,4 +5,4 @@ weight = 7
 presentations = ["microexchange2016"]
 +++
 
-{{< center-inline "/microexchange2016/cucumber-report/index.html" >}}
+{{< center-inline "/slides/microexchange2016/cucumber-report/index.html" >}}

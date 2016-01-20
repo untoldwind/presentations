@@ -5,4 +5,4 @@ weight = 2
 presentations = ["microexchange2016"]
 +++
 
-{{< center-image "/microexchange2016/images/build-pipeline.svg" >}}
+{{< center-image "/slides/microexchange2016/images/build-pipeline.svg" >}}
