@@ -5,6 +5,9 @@ weight = 9
 presentations = ["microexchange2016"]
 +++
 
+<table border="0" width="100%">
+<tr>
+<td width="50%">
 {{< highlight "yaml" >}}
 swagger: '2.0'
 info:
@@ -33,7 +36,10 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-...
+{{< /highlight >}}
+</td>
+<td width="50%">
+{{< highlight "yaml" >}}
 definitions:
   Author:
     type: object
@@ -65,3 +71,6 @@ definitions:
           type: string
 ...
 {{< /highlight >}}
+</td>
+</tr>
+</table>
