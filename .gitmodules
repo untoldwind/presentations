@@ -1,0 +1,3 @@
+[submodule "themes/leanovate-presentation-theme"]
+	path = themes/leanovate-presentation-theme
+	url = git@github.com:leanovate/leanovate-presentation-theme.git
