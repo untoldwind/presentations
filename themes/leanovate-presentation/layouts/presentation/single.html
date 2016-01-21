@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" media="screen, projection, print" href="{{ "/css/leanovate.css" | relURL}}" />
 <script src="{{ "/js/slidy.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
 <script src="{{ "/js/fit.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
+<script src="{{ "/js/glue.js" | relURL }}" charset="utf-8" type="text/javascript"></script>
 <meta name="duration" content="{{ .Params.duration }}" />
 <meta name="copyright" content="{{ .Params.copyright }}" />
 </head>
@@ -22,19 +23,3 @@
 {{ range $presentation.Pages.ByWeight }}
    {{ .Render "presentation" }}
 {{ end }}
-
-<script type="text/javascript">
-var outers = window.document.querySelectorAll(".center-outer");
-for (var i = 0; i < outers.length; i++) {
-    var outer = outers.item(i);
-    var inner = outer.querySelector(".center-inner");
-
-    fit(inner, outer, {
-        hAlign: fit.CENTER,
-        vAlign: fit.CENTER,
-        cover: false,
-        watch: false,
-        apply: true
-    });
-}
-</script>

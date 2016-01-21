@@ -78,6 +78,8 @@ var w3c_slidy = {
   // and then to recompute absolute width/height dimensions on resizing
    objects: [],
 
+   after_slide_display: null,
+
   // attach initialiation event handlers
   set_up: function () {
     var init = function() { w3c_slidy.init(); };
@@ -1599,6 +1601,8 @@ var w3c_slidy = {
   show_slide: function (slide) {
     this.sync_background(slide);
     this.remove_class(slide, "hidden");
+
+    this.after_slide_display && this.after_slide_display();
 
     // work around IE9 object rendering bug
     setTimeout("window.scrollTo(0,0);", 1);
