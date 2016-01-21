@@ -3,6 +3,8 @@
 <link rel="stylesheet" type="text/css" media="screen, projection, print" href="./css/slidy.css" />
 <link rel="stylesheet" type="text/css" media="screen, projection, print" href="./css/leanovate.css" />
 <script src="./js/slidy.js" charset="utf-8" type="text/javascript"></script>
+<script src="./js/fit.js" charset="utf-8" type="text/javascript"></script>
+<script src="./js/glue.js" charset="utf-8" type="text/javascript"></script>
 <meta name="duration" content="15" />
 <meta name="copyright" content="Copyright Leanovate 2016 (MIT)" />
 </head>
@@ -22,29 +24,35 @@
    <div class="slide">
   <h1>Common scenario</h1>
 
-  <div class="center-box">
-  <img src="./slides/microexchange2016/images/scenario.svg"></img>
-</div>
+  <div class="center-outer">
+      <div class="center-inner">
+          <img class="centered" src="./slides/microexchange2016/images/scenario.svg"></img>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Desired build pipeline</h1>
 
-  <div class="center-box">
-  <img src="./slides/microexchange2016/images/build-pipeline.svg"></img>
-</div>
+  <div class="center-outer">
+      <div class="center-inner">
+          <img class="centered" src="./slides/microexchange2016/images/build-pipeline.svg"></img>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Most common errors</h1>
 
-  <ul class="incremental">
+  <div class="center-outer">
+      <div class="center-inner">
+          <ul class="incremental">
 <li>Data is not where it is expected to be, e.g. ...
 
 <ul>
@@ -66,26 +74,34 @@
 </ul></li>
 </ul>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>How to avoid most of them</h1>
 
-  <ul class="incremental">
+  <div class="center-outer">
+      <div class="center-inner">
+          <ul class="incremental">
 <li>Provide precise documentation your API</li>
 <li>Developers love to read documentation</li>
 <li>... but hate to write it</li>
 <li>... and forget to update it</li>
 </ul>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Document by example</h1>
 
-  <ul class="incremental">
+  <div class="center-outer">
+      <div class="center-inner">
+          <ul class="incremental">
 <li>Write your own consumer test (or smoke test) for your service
 
 <ul>
@@ -94,17 +110,22 @@
 <li>If possible use a BDD test-framework</li>
 </ul></li>
 <li>Log all HTTP requests/responses</li>
-<li>Generate a report from theses logs and automatically publish it where other developers can easily find them</li>
+<li>Generate a report from theses logs</li>
+<li>Publish this report where other developers can easily find them</li>
 <li>Optional: Record all html requests with a mock-tool (e.g. <a href="http://wiremock.org/">Wiremock</a>)</li>
 </ul>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Cucumber JVM</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">Feature:</span><span style="color: #0066BB; font-weight: bold"> Manage authors</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">Feature:</span><span style="color: #0066BB; font-weight: bold"> Manage authors</span>
 <span style="color: #0066BB; font-weight: bold">  </span><span style="color: #008800; font-weight: bold">Scenario:</span><span style="color: #0066BB; font-weight: bold"> Add and remove author</span>
 <span style="color: #0066BB; font-weight: bold">    Given: A running book database</span>
 <span style="color: #008800; font-weight: bold">    When </span><span style="color: #0066BB; font-weight: bold">An author with name &quot;</span><span style="background-color: #fff0f0">Test Writer</span><span style="color: #0066BB; font-weight: bold">&quot; is added</span>
@@ -138,25 +159,33 @@
 </pre></div>
 </p>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Cucumber HTML report</h1>
 
-  <div class="center-box">
-    <iframe class="center-inline" src="./slides/microexchange2016/cucumber-report/index.html">
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="center-box">
+    <iframe src="./slides/microexchange2016/cucumber-report/index.html">
     </iframe>
 </div>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Provide API specification</h1>
 
-  <ul class="incremental">
+  <div class="center-outer">
+      <div class="center-inner">
+          <ul class="incremental">
 <li>Document your API with a REST specification (e.g. <a href="http://swagger.io/">Swagger</a> or <a href="http://raml.org/">RAML</a>)</li>
 <li>How to keep the specification in-sync with reality?</li>
 <li>Usual approach: Add lots of annotations to your source-code and generate documentation automatically
@@ -173,13 +202,20 @@
 </ul></li>
 </ul>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Swagger 2.0 specification</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">swagger: <span style="background-color: #fff0f0">&#39;2.0&#39;</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <table border="0" width="100%">
+<tr>
+<td width="50%">
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">swagger: <span style="background-color: #fff0f0">&#39;2.0&#39;</span>
 info:
   title: Book database API
   description: Manage all your books
@@ -206,8 +242,11 @@ paths:
           description: Unexpected error
           schema:
             $ref: <span style="background-color: #fff0f0">&#39;#/definitions/Error&#39;</span>
-<span style="color: #0e84b5; font-weight: bold">...</span>
-definitions:
+</pre></div>
+
+</td>
+<td width="50%">
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">definitions:
   Author:
     type: object
     required:
@@ -239,14 +278,21 @@ definitions:
 <span style="color: #0e84b5; font-weight: bold">...</span>
 </pre></div>
 
+</td>
+</tr>
+</table>
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Check serializers</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
   <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
@@ -271,13 +317,17 @@ definitions:
 </pre></div>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Check deserializers</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">Specification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">MustMatchers</span> <span style="color: #333333">{</span>
   <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;Author&quot;</span> should <span style="color: #333333">{</span>
@@ -297,13 +347,17 @@ definitions:
 </pre></div>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Test router</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RouterSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #333333">{</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">RouterSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #333333">{</span>
   <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;Router&quot;</span> should <span style="color: #333333">{</span>
@@ -324,13 +378,17 @@ definitions:
 </pre></div>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Example: Test controller</h1>
 
-  <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorsControllerSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">Mockito</span> <span style="color: #333333">{</span>
+  <div class="center-outer">
+      <div class="center-inner">
+          <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">AuthorsControllerSpec</span> <span style="color: #008800; font-weight: bold">extends</span> <span style="color: #BB0066; font-weight: bold">PlaySpecification</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">ScalaCheck</span> <span style="color: #008800; font-weight: bold">with</span> <span style="color: #BB0066; font-weight: bold">Mockito</span> <span style="color: #333333">{</span>
   <span style="color: #008800; font-weight: bold">val</span> swaggerCheck <span style="color: #008800; font-weight: bold">=</span> <span style="color: #BB0066; font-weight: bold">SwaggerChecks</span><span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">File</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;bookdb_api.yaml&quot;</span><span style="color: #333333">))</span>
 
   <span style="background-color: #fff0f0">&quot;AuthorsController&quot;</span> should <span style="color: #333333">{</span>
@@ -349,9 +407,7 @@ definitions:
 
   <span style="color: #008800; font-weight: bold">def</span> testApp<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">Application</span> <span style="color: #333333">=</span> <span style="color: #333333">{</span>
     <span style="color: #008800; font-weight: bold">val</span> mockAuthorDAO <span style="color: #008800; font-weight: bold">=</span> mock<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">]</span>
-
-<span style="color: #333333">...</span> setup mockAuthorDAO <span style="color: #333333">...</span>
-
+<span style="color: #333333">...</span>setup mockAuthorDAO<span style="color: #333333">...</span>
     <span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">GuiceApplicationBuilder</span><span style="color: #333333">()</span>
       <span style="color: #333333">.</span>overrides<span style="color: #333333">(</span>bind<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">].</span>toInstance<span style="color: #333333">(</span>mockAuthorDAO<span style="color: #333333">))</span>
       <span style="color: #333333">.</span>build<span style="color: #333333">()</span>
@@ -360,18 +416,24 @@ definitions:
 </pre></div>
 
 
+     </div>
+  </div>
 </div>
 
 
    <div class="slide">
   <h1>Further reading</h1>
 
-  <ul>
+  <div class="center-outer">
+      <div class="center-inner">
+          <ul>
 <li>SwaggerCheck: <a href="https://github.com/leanovate/swagger-check">https://github.com/leanovate/swagger-check</a></li>
 <li>Cucumber REST helper: <a href="https://github.com/leanovate/cucumber-rest-helper">https://github.com/leanovate/cucumber-rest-helper</a></li>
 <li>Book db sample: <a href="https://github.com/leanovate/book-db-sample">https://github.com/leanovate/book-db-sample</a></li>
 </ul>
 
+     </div>
+  </div>
 </div>
 
 

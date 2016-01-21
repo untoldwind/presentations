@@ -37,9 +37,7 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</guid>
-      <description>&lt;div class=&#34;center-box&#34;&gt;
-  &lt;img src=&#34;../slides/microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
-&lt;/div&gt;
+      <description>&lt;img class=&#34;centered&#34; src=&#34;../slides/microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
 
 </description>
     </item>
@@ -50,9 +48,7 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</guid>
-      <description>&lt;div class=&#34;center-box&#34;&gt;
-  &lt;img src=&#34;../slides/microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
-&lt;/div&gt;
+      <description>&lt;img class=&#34;centered&#34; src=&#34;../slides/microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
 
 </description>
     </item>
@@ -117,7 +113,8 @@
 &lt;li&gt;If possible use a BDD test-framework&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Log all HTTP requests/responses&lt;/li&gt;
-&lt;li&gt;Generate a report from theses logs and automatically publish it where other developers can easily find them&lt;/li&gt;
+&lt;li&gt;Generate a report from theses logs&lt;/li&gt;
+&lt;li&gt;Publish this report where other developers can easily find them&lt;/li&gt;
 &lt;li&gt;Optional: Record all html requests with a mock-tool (e.g. &lt;a href=&#34;http://wiremock.org/&#34;&gt;Wiremock&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -172,7 +169,7 @@
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</guid>
       <description>&lt;div class=&#34;center-box&#34;&gt;
-    &lt;iframe class=&#34;center-inline&#34; src=&#34;../slides/microexchange2016/cucumber-report/index.html&#34;&gt;
+    &lt;iframe src=&#34;../slides/microexchange2016/cucumber-report/index.html&#34;&gt;
     &lt;/iframe&gt;
 &lt;/div&gt;
 
@@ -210,7 +207,10 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/09-swagger-example.html</guid>
-      <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;swagger: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt;
+      <description>&lt;table border=&#34;0&#34; width=&#34;100%&#34;&gt;
+&lt;tr&gt;
+&lt;td width=&#34;50%&#34;&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;swagger: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt;
 info:
   title: Book database API
   description: Manage all your books
@@ -237,8 +237,11 @@ paths:
           description: Unexpected error
           schema:
             $ref: &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;#/definitions/Error&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;color: #0e84b5; font-weight: bold&#34;&gt;...&lt;/span&gt;
-definitions:
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/td&gt;
+&lt;td width=&#34;50%&#34;&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;definitions:
   Author:
     type: object
     required:
@@ -270,6 +273,9 @@ definitions:
 &lt;span style=&#34;color: #0e84b5; font-weight: bold&#34;&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
 </description>
     </item>
     
@@ -388,9 +394,7 @@ definitions:
 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;def&lt;/span&gt; testApp&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;Application&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;val&lt;/span&gt; mockAuthorDAO &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;=&lt;/span&gt; mock&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;AuthorDAO&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-
-&lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt; setup mockAuthorDAO &lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
-
+&lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;setup mockAuthorDAO&lt;span style=&#34;color: #333333&#34;&gt;...&lt;/span&gt;
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;GuiceApplicationBuilder&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt;
       &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;overrides&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;bind&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #333399; font-weight: bold&#34;&gt;AuthorDAO&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;].&lt;/span&gt;toInstance&lt;span style=&#34;color: #333333&#34;&gt;(&lt;/span&gt;mockAuthorDAO&lt;span style=&#34;color: #333333&#34;&gt;))&lt;/span&gt;
       &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt;build&lt;span style=&#34;color: #333333&#34;&gt;()&lt;/span&gt;

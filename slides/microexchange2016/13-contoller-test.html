@@ -17,9 +17,7 @@
 
   <span style="color: #008800; font-weight: bold">def</span> testApp<span style="color: #008800; font-weight: bold">:</span> <span style="color: #333399; font-weight: bold">Application</span> <span style="color: #333333">=</span> <span style="color: #333333">{</span>
     <span style="color: #008800; font-weight: bold">val</span> mockAuthorDAO <span style="color: #008800; font-weight: bold">=</span> mock<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">]</span>
-
-<span style="color: #333333">...</span> setup mockAuthorDAO <span style="color: #333333">...</span>
-
+<span style="color: #333333">...</span>setup mockAuthorDAO<span style="color: #333333">...</span>
     <span style="color: #008800; font-weight: bold">new</span> <span style="color: #BB0066; font-weight: bold">GuiceApplicationBuilder</span><span style="color: #333333">()</span>
       <span style="color: #333333">.</span>overrides<span style="color: #333333">(</span>bind<span style="color: #333333">[</span><span style="color: #333399; font-weight: bold">AuthorDAO</span><span style="color: #333333">].</span>toInstance<span style="color: #333333">(</span>mockAuthorDAO<span style="color: #333333">))</span>
       <span style="color: #333333">.</span>build<span style="color: #333333">()</span>
