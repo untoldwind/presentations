@@ -8,7 +8,7 @@ presentations = ["microexchange2016"]
 {.incremental}
 * Document your API with a REST specification (e.g. [Swagger](http://swagger.io/) or [RAML](http://raml.org/))
 * How to keep the specification in-sync with reality?
-* Usual approach: Add lots of annotations to your source-code and generate documentation automatically
+* Usual approach: Add lots of annotations to your source-code and generate specification automatically
   * Accuracy of the specification highly depends on the framework (jax-rs, Play, Ratpack, liberator, ...)
   * No guarantee that a new API version is backward compatible
 * Advanced approach:
