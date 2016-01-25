@@ -10,3 +10,4 @@ presentations = ["microexchange2016"]
 * Developers love to read documentation
 * ... but hate to write it
 * ... and forget to update it
+* ... because it hard to test the preciseness of a documentation
