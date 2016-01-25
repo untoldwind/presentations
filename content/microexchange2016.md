@@ -1,5 +1,5 @@
 +++
-title = "Testing strategies for micro-services"
+title = "Automatic Test generation for REST-APIs"
 type = "presentation"
 presentation = "microexchange2016"
 duration = 15
