@@ -1,5 +1,5 @@
 +++
-title = "Automatic Test generation for REST-APIs"
+title = "(Semi-)Automatic Test generation for REST-APIs"
 type = "presentation"
 presentation = "microexchange2016"
 duration = 15
