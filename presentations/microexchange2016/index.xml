@@ -381,9 +381,10 @@ paths:
       <description>&lt;ul class=&#34;incremental&#34;&gt;
 &lt;li&gt;Document your API with a REST specification (e.g. &lt;a href=&#34;http://swagger.io/&#34;&gt;Swagger&lt;/a&gt; or &lt;a href=&#34;http://raml.org/&#34;&gt;RAML&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;How to keep the specification in-sync with reality?&lt;/li&gt;
-&lt;li&gt;Usual approach: Add lots of annotations to your source-code and generate specification automatically
+&lt;li&gt;Usual approach:
 
 &lt;ul&gt;
+&lt;li&gt;Enrich/polute to your source-code with lots of annotations and generate specification automatically&lt;/li&gt;
 &lt;li&gt;Accuracy of the specification highly depends on the framework (jax-rs, Play, Ratpack, liberator, ...)&lt;/li&gt;
 &lt;li&gt;No guarantee that a new API version is backward compatible&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
