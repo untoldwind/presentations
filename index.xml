@@ -46,7 +46,9 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/01-scenario.html</guid>
-      <description>&lt;img class=&#34;centered&#34; src=&#34;./slides/microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
+      <description>
+&lt;img class=&#34;centered&#34; src=&#34;slides/microexchange2016/images/scenario.svg&#34;&gt;&lt;/img&gt;
+
 
 </description>
     </item>
@@ -57,7 +59,9 @@
       <pubDate>Tue, 12 Jan 2016 18:01:10 +0100</pubDate>
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/02-desired-build-pipeline.html</guid>
-      <description>&lt;img class=&#34;centered&#34; src=&#34;./slides/microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
+      <description>
+&lt;img class=&#34;centered&#34; src=&#34;slides/microexchange2016/images/build-pipeline.svg&#34;&gt;&lt;/img&gt;
+
 
 </description>
     </item>
@@ -178,7 +182,9 @@
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/07-cucumber-report.html</guid>
       <description>&lt;div class=&#34;center-box&#34;&gt;
-    &lt;iframe src=&#34;./slides/microexchange2016/cucumber-report/index.html&#34;&gt;
+
+    &lt;iframe src=&#34;slides/microexchange2016/cucumber-report/index.html&#34;&gt;
+
     &lt;/iframe&gt;
 &lt;/div&gt;
 
