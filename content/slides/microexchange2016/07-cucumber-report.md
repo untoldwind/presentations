@@ -6,4 +6,4 @@ presentations = ["microexchange2016"]
 markup = "mmark"
 +++
 
-{{< center-inline "/slides/microexchange2016/cucumber-report/index.html" >}}
+{{< center-inline rel="cucumber-report/index.html" >}}

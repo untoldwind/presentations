@@ -6,4 +6,4 @@ presentations = ["microexchange2016"]
 markup = "mmark"
 +++
 
-{{< center-image "/slides/microexchange2016/images/scenario.svg" >}}
+{{< center-image rel="images/scenario.svg" >}}
