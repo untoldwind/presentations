@@ -326,6 +326,11 @@ paths:
       
       <guid>http://replace-this-with-your-hugo-site.com/slides/microexchange2016/14-further-reading.html</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Robustness_principle&#34;&gt;Robustness principle&lt;/a&gt; (Postel&#39;s law):
+
+&lt;ul&gt;
+&lt;li&gt;Be conservative in what you do, be liberal in what you accept from others&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;SwaggerCheck: &lt;a href=&#34;https://github.com/leanovate/swagger-check&#34;&gt;https://github.com/leanovate/swagger-check&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Cucumber REST helper: &lt;a href=&#34;https://github.com/leanovate/cucumber-rest-helper&#34;&gt;https://github.com/leanovate/cucumber-rest-helper&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Book db sample: &lt;a href=&#34;https://github.com/leanovate/book-db-sample&#34;&gt;https://github.com/leanovate/book-db-sample&lt;/a&gt;&lt;/li&gt;
